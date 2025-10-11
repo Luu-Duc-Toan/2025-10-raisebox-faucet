@@ -1,66 +1,109 @@
-## Foundry
+# Protocol Name
 
-**Foundry is a blazing fast, portable and modular toolkit for Ethereum application development written in Rust.**
+Raisebox faucet
 
-Foundry consists of:
+- Starts: October 09, 2025 Noon UTC
+- Ends: October 16, 2025 Noon UTC
 
-- **Forge**: Ethereum testing framework (like Truffle, Hardhat and DappTools).
-- **Cast**: Swiss army knife for interacting with EVM smart contracts, sending transactions and getting chain data.
-- **Anvil**: Local Ethereum node, akin to Ganache, Hardhat Network.
-- **Chisel**: Fast, utilitarian, and verbose solidity REPL.
+- nSLOC: 157
 
-## Documentation
+[//]: # "contest-details-open"
 
-https://book.getfoundry.sh/
+## About the Project
 
-## Usage
+About
 
-### Build
+RaiseBox Faucet is a token drip faucet that drips 1000 test tokens to users every 3 days. It also drips 0.005 sepolia eth to first time users.
 
-```shell
-$ forge build
+The faucet tokens will be useful for testing the testnet of a future protocol that would only allow interactions using this tokens.
+
+## Actors
+
+There are basically 3 actors in this protocol:
+
+## 1. Owner:
+
+#### RESPONSIBILITIES:
+
+- deploys contract,
+- mint initial supply and any new token in future,
+- can burn tokens,
+- can adjust daily claim limit,
+- can refill sepolia eth balance
+
+#### LIMITATIONS:
+
+- cannot claimfaucet tokens
+
+## 2. Claimer:
+
+#### RESPONSIBILITIES:
+
+- can claim tokens by calling the claimFaucetTokens function of this contract.
+
+#### LIMITATIONS:
+
+- Doesn't have any owner defined rights above.
+
+## 3. Donators:
+
+#### RESPONSIBILITIES:
+
+- can donate sepolia eth directly to contract
+
+[//]: # "contest-details-close"
+[//]: # "scope-open"
+
+## Scope (contracts)
+
+```
+src/
+├── RaiseBoxFaucet.sol
+├── DeployRaiseBoxFaucet.s.sol
+
 ```
 
-### Test
+## Compatibilities
 
-```shell
-$ forge test
+- Blockchains:
+  - Ethereum/EVM
+- Tokens:
+  - SEP ETH
+
+[//]: # "scope-close"
+[//]: # "getting-started-open"
+
+## Setup
+
+Build:
+
+```
+git clone https://github.com/CodeHawks-Contests/2025-10-raisebox-faucet.git
+
+forge init
+
+forge install OpenZeppelin/openzeppelin-contracts
+
+forge install forge-std
+
+forge build
+
 ```
 
-### Format
+Tests:
 
-```shell
-$ forge fmt
+```
+Forge test
+
 ```
 
-### Gas Snapshots
+[//]: # "getting-started-close"
+[//]: # "known-issues-open"
 
-```shell
-$ forge snapshot
-```
+## Known Issues
 
-### Anvil
+Known Issues:
 
-```shell
-$ anvil
-```
+No known issues.
 
-### Deploy
-
-```shell
-$ forge script script/Counter.s.sol:CounterScript --rpc-url <your_rpc_url> --private-key <your_private_key>
-```
-
-### Cast
-
-```shell
-$ cast <subcommand>
-```
-
-### Help
-
-```shell
-$ forge --help
-$ anvil --help
-$ cast --help
-```
+[//]: # "known-issues-close"
