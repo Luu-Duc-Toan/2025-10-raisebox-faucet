@@ -103,7 +103,7 @@ Suite result: ok. 1 passed; 0 failed; 0 skipped; finished in 15.43ms (14.64ms CP
 
 ## Recommended Mitigation
 
-1. **Move reset logic before the limit check**:
+**Move reset logic before the limit check**:
 
 ```diff
 function claimFaucetTokens() public {
@@ -122,24 +122,4 @@ function claimFaucetTokens() public {
 -   }
     dailyClaimCount++;
 }
-```
-
-2. **Alternative: Add external reset function**:
-
-```diff
-+ function resetDailyCounterIfNeeded() external {
-+     if (block.timestamp > lastFaucetDripDay + 1 days) {
-+         lastFaucetDripDay = block.timestamp;
-+         dailyClaimCount = 0;
-+     }
-+ }
-```
-
-3. **Emergency reset for owner**:
-
-```diff
-+ function emergencyResetDailyCounter() external onlyOwner {
-+     dailyClaimCount = 0;
-+     lastFaucetDripDay = block.timestamp;
-+ }
 ```
