@@ -114,7 +114,7 @@ function testSybilDDoSAttack() public {
 }
 ```
 
-**SybilDDoSAttack.t.sol**: <https://github.com/Luu-Duc-Toan/2025-10-raisebox-faucet/blob/main/test/SybilDDoSAttack.t.sol>
+**SybilDDoSAttack.t.sol**: https://github.com/Luu-Duc-Toan/2025-10-raisebox-faucet/blob/master/test/SybilDDoSAttack.t.sol
 
 ## Recommended Mitigation
 
