@@ -88,6 +88,14 @@ function testRelativeTimeReset() public {
 
 **RelativeTimeReset.t.sol**: https://github.com/Luu-Duc-Toan/2025-10-raisebox-faucet/blob/master/test/RelativeTimeReset.t.sol
 
+Result:
+
+```bash
+Ran 1 test for test/RelativeTimeReset.t.sol:TestRelativeTimeReset
+[PASS] testRelativeTimeReset() (gas: 11788188)
+Suite result: ok. 1 passed; 0 failed; 0 skipped; finished in 22.16ms (19.72ms CPU time)
+```
+
 ## Recommended Mitigation
 
 **Use day boundary calculation instead of relative timing**:
