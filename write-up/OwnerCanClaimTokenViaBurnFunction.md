@@ -94,8 +94,7 @@ Replace the transfer-and-burn logic with a direct burn from the faucet's balance
 
 ```diff
 function burnFaucetTokens(uint256 amountToBurn) public onlyOwner {
-    require(amountToBurn <= balanceOf(address(this)), "Faucet Token Balance: Insufficient");
-
+-    require(amountToBurn <= balanceOf(address(this)), "Faucet Token Balance: Insufficient");
 -    // transfer faucet balance to owner first before burning
 -    // ensures owner has a balance before _burn (owner only function) can be called successfully
 -    _transfer(address(this), msg.sender, balanceOf(address(this)));
