@@ -78,7 +78,7 @@ function testOwnerCanClaimTokenViaBurnFunction() public {
 }
 ```
 
-**OwnerCanClaimTokenViaBurnFunction.t.sol**: https://github.com/Luu-Duc-Toan/2025-10-raisebox-faucet/blob/main/test/OwnerCanClaimTokenViaBurnFunction.t.sol
+**OwnerCanClaimTokenViaBurnFunction.t.sol**: https://github.com/Luu-Duc-Toan/2025-10-raisebox-faucet/blob/master/test/OwnerCanClaimTokenViaBurnFunction.t.sol
 
 Results:
 
