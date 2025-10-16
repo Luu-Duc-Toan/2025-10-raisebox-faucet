@@ -66,7 +66,7 @@ function testPreventFinalClaim() public {
 }
 ```
 
-**PreventFinalClaim.t.sol**: https://github.com/Luu-Duc-Toan/2025-10-raisebox-faucet/blob/main/test/PreventFinalClaim.t.sol
+**PreventFinalClaim.t.sol**: https://github.com/Luu-Duc-Toan/2025-10-raisebox-faucet/blob/master/test/PreventFinalClaim.t.sol
 
 Result:
 
